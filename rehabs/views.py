@@ -10,7 +10,7 @@ def index(request):
     return HttpResponse('Something Amazing Coming Soon')
 
 def pdf(request):
-    return redirect('/static/uploads/catalog/provisional_degree_certificate.pdf')
+    return redirect('/static/uploads/catalog/catalog.pdf')
 
 
 
