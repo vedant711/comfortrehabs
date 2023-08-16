@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'style.css' %}" type="text/css">
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'assets/img/favicons/favicon.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'assets/img/favicons/favicon.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'assets/img/favicons/favicon.png' %}">
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'assets/img/favicons/favicon.png' %}">
+    <link rel="manifest" href="{% static 'assets/img/favicons/manifest.json' %}">
+    <meta name="msapplication-TileImage" content="{% static 'assets/img/favicons/favicon.png' %}">
+    <link href="{% static 'assets/css/style.css' %}" rel="stylesheet" />
+
+    <title>Login</title>
+</head>
+<body>
+    <div id="login-root">
+        <div class="login-container">
+            {% if messages %}
+            {% for m in messages %}
+            <p>{{m}}</p>
+            {% endfor %}
+            {% endif %}
+            <form action="/super-root-user/" method="post" style="width: 100%;">
+                {% csrf_token %}
+                <input type="text" name="username" id="" placeholder="Enter Your Username"><br/>
+                <input type="password" name="password" id="" placeholder="Enter Your Password"><br/>
+                <input type="submit" value="Login">
+            </form>
+    <!-- <a href="create"><button>Create</button></a> -->
+</div>
+    
+</div>
+    
+</body>
+</html>

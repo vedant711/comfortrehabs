@@ -1,0 +1,239 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'assets/img/favicons/favicon.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'assets/img/favicons/favicon.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'assets/img/favicons/favicon.png' %}">
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'assets/img/favicons/favicon.png' %}">
+    <link rel="manifest" href="{% static 'assets/img/favicons/manifest.json' %}">
+    <meta name="msapplication-TileImage" content="{% static 'assets/img/favicons/favicon.png' %}">
+    <meta name="theme-color" content="#ffffff">
+    <link href="{% static 'assets/css/theme.css' %}" rel="stylesheet" />
+
+    <title>Our Products | Comfort Rehabs</title>
+</head>
+<body>
+  <script>
+    const zhDesc = () => {
+      document.getElementById('zh-desc').style.display = 'block'
+      document.getElementById('sw-desc').style.display = 'none'
+      document.getElementById('ar-desc').style.display = 'none'
+      document.getElementById('en-desc').style.display = 'none'
+
+    }
+
+    const enDesc = () => {
+      document.getElementById('zh-desc').style.display = 'none'
+      document.getElementById('sw-desc').style.display = 'none'
+      document.getElementById('ar-desc').style.display = 'none'
+      document.getElementById('en-desc').style.display = 'block'
+
+    }
+
+    const arDesc = () => {
+      document.getElementById('zh-desc').style.display = 'none'
+      document.getElementById('sw-desc').style.display = 'none'
+      document.getElementById('ar-desc').style.display = 'block'
+      document.getElementById('en-desc').style.display = 'none'
+
+    }
+
+    const swDesc = () => {
+      document.getElementById('zh-desc').style.display = 'none'
+      document.getElementById('sw-desc').style.display = 'block'
+      document.getElementById('ar-desc').style.display = 'none'
+      document.getElementById('en-desc').style.display = 'none'
+
+    }
+  </script>
+    <main class="main" id="top">
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3 d-block" data-navbar-on-scroll="data-navbar-on-scroll">
+            <div class="container"><a class="navbar-brand" href="/"><img src="{% static 'assets/img/gallery/logo.png' %}" width="118" alt="logo" /></a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"> </span></button>
+              <div class="collapse navbar-collapse border-top border-lg-0 mt-4 mt-lg-0" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto pt-2 pt-lg-0 font-base">
+                  <li class="nav-item px-2"><a class="nav-link" href="/">Home</a></li>
+                  <li class="nav-item px-2"><a class="nav-link" aria-current="page" href="/about">About Us</a></li>
+                  <li class="nav-item px-2"><a class="nav-link" href="/products">Our Products</a></li>
+                  <!-- <li class="nav-item px-2"><a class="nav-link" href="#findUs">Membership</a></li> -->
+                  <!-- <li class="nav-item px-2"><a class="nav-link" href="#findUs">Help </a></li> -->
+                  <li class="nav-item px-2"><a class="nav-link" href="/contact">Contact Us</a></li>
+                </ul>
+                <!-- <a class="btn btn-sm btn-outline-primary rounded-pill order-1 order-lg-0 ms-lg-4" href="#!">Sign In</a> -->
+              </div>
+            </div>
+          </nav>
+
+          <section class="py-5">
+
+            <div class="container">
+              <div class="row">
+                <div class="col-12 py-3">
+                  <!-- <div class="bg-holder bg-size" style="background-image:url({% static 'assets/img/gallery/blog-post.png' %});background-position:top center;background-size:contain;">
+                  </div> -->
+                  <!--/.bg-holder-->
+    
+                  <h1 class="text-center">OUR PRODUCTS</h1>
+                </div>
+              </div>
+            </div>
+            <!-- end of .container-->
+    
+          </section>
+          <!-- <section> close ============================-->
+          <!-- ============================================-->
+    
+    
+          <section class="py-8">
+            <div class="bg-holder bg-size" style="background-image:url({% static 'assets/img/gallery/dot-bg.png' %});background-position:top left;background-size:auto;">
+            </div>
+            <!--/.bg-holder-->
+
+            {% if products %}
+            <div class="container">
+              <div class="row" >
+            {% for product in products %}
+
+                <div class="col-sm-6 col-lg-4 mb-4" >
+                  <div class="card h-100 shadow card-span rounded-3"><img class="card-img-top rounded-top-3" src="{% static product.img_path %}" alt="news" />
+                    <div class="card-body"><span class="text-primary me-3" style="font-size: 1.3rem;font-weight: bold;">{{product.title}}</span>
+                      <span class="text-900" style="font-size: 1.3rem;">{{product.joint}}</span>
+                      <p class="font-base my-3" style="height: 10rem; overflow-y: hidden; font-size: 0.9rem;" id="en-desc{{product.id}}">{{product.description}}</p>
+                      <p class="font-base my-3" style="height: 10rem; overflow-y: hidden; font-size: 0.9rem; display: none;" id="zh-desc{{product.id}}">{{product.chinese_description}}</p>
+                      <p class="font-base my-3" style="height: 10rem; overflow-y: hidden; font-size: 0.9rem; display: none;" id="sw-desc{{product.id}}">{{product.swahili_description}}</p>
+                      <p class="font-base my-3" style="height: 10rem; overflow-y: hidden; font-size: 0.9rem; display: none;" id="ar-desc{{product.id}}">{{product.arabic_description}}</p>
+
+                      <span style="color: rgb(137, 138, 138); cursor: pointer; margin-right: 10px;" 
+                            onclick="document.getElementById('zh-desc{{product.id}}').style.display = 'none'
+                                          document.getElementById('sw-desc{{product.id}}').style.display = 'none'
+                                          document.getElementById('ar-desc{{product.id}}').style.display = 'none'
+                                          document.getElementById('en-desc{{product.id}}').style.display = 'block'" 
+                            onmouseover="this.style.color = 'black'" 
+                            onmouseout="this.style.color = 'rgb(137, 138, 138)'">en</span>
+                      
+                      <span style="color: rgb(137, 138, 138); cursor: pointer; margin-right: 10px;" 
+                            onclick="document.getElementById('zh-desc{{product.id}}').style.display = 'block'
+                                          document.getElementById('sw-desc{{product.id}}').style.display = 'none'
+                                          document.getElementById('ar-desc{{product.id}}').style.display = 'none'
+                                          document.getElementById('en-desc{{product.id}}').style.display = 'none'" 
+                            onmouseover="this.style.color = 'black'" 
+                            onmouseout="this.style.color = 'rgb(137, 138, 138)'">诶</span>
+                      
+                      <span style="color: rgb(137, 138, 138); cursor: pointer; margin-right: 10px;" 
+                            onclick="document.getElementById('zh-desc{{product.id}}').style.display = 'none'
+                                          document.getElementById('sw-desc{{product.id}}').style.display = 'none'
+                                          document.getElementById('ar-desc{{product.id}}').style.display = 'block'
+                                          document.getElementById('en-desc{{product.id}}').style.display = 'none'"
+                            onmouseover="this.style.color = 'black'" 
+                            onmouseout="this.style.color = 'rgb(137, 138, 138)'">عربي</span>
+                      
+                      <span style="color: rgb(137, 138, 138); cursor: pointer; margin-right: 10px;" 
+                            onclick="document.getElementById('zh-desc{{product.id}}').style.display = 'none'
+                                          document.getElementById('sw-desc{{product.id}}').style.display = 'block'
+                                          document.getElementById('ar-desc{{product.id}}').style.display = 'none'
+                                          document.getElementById('en-desc{{product.id}}').style.display = 'none'" 
+                            onmouseover="this.style.color = 'black'" 
+                            onmouseout="this.style.color = 'rgb(137, 138, 138)'">sw</span>
+
+                    </div>
+                  </div>
+                </div>
+                
+                
+                {% endfor %}
+              </div>
+            </div>
+            {% endif %}
+          </section>
+
+        <section class="py-0 bg-secondary">
+            <div class="bg-holder opacity-25" style="background-image:url({% static 'assets/img/gallery/dot-bg.png' %});background-position:top left;margin-top:-3.125rem;background-size:auto;">
+            </div>
+            <!--/.bg-holder-->
+    
+            <div class="container">
+              <div class="row py-8">
+                <div class="col-12 col-sm-12 col-lg-6 mb-4 order-0 order-sm-0"><a class="text-decoration-none" href="/"><img src="{% static 'assets/img/gallery/logo1.png' %}" height="51" alt="" /></a>
+                  <p class="text-light my-4">The world's most trusted ortho products company.</p>
+                </div>
+                <div class="col-6 col-sm-4 col-lg-2 mb-3 order-2 order-sm-1">
+                  <h5 class="lh-lg fw-bold mb-4 text-light font-sans-serif">Major Joints</h5>
+                  <ul class="list-unstyled mb-md-4 mb-lg-0">
+                    <li class="lh-lg"><a class="footer-link" href="/products/knee">Knee Joint</a></li>
+                    <li class="lh-lg"><a class="footer-link" href="/products/shoulder">Shoulder Joint</a></li>
+                    <li class="lh-lg"><a class="footer-link" href="/products/elbow">Elbow Joint</a></li>
+                  </ul>
+                </div>
+                <!-- <div class="col-6 col-sm-4 col-lg-2 mb-3 order-3 order-sm-2">
+                  <h5 class="lh-lg fw-bold text-light mb-4 font-sans-serif">Membership</h5>
+                  <ul class="list-unstyled mb-md-4 mb-lg-0">
+                    <li class="lh-lg"><a class="footer-link" href="#!">Free trial</a></li>
+                    <li class="lh-lg"><a class="footer-link" href="#!">Silver</a></li>
+                    <li class="lh-lg"><a class="footer-link" href="#!">Premium</a></li>
+                  </ul>
+                </div> -->
+                <div class="col-6 col-sm-4 col-lg-2 mb-3 order-3 order-sm-2">
+                  <h5 class="lh-lg fw-bold text-light mb-4 font-sans-serif"> Customer Care</h5>
+                  <ul class="list-unstyled mb-md-4 mb-lg-0">
+                    <li class="lh-lg"><a class="footer-link" href="/about">About Us</a></li>
+                    <li class="lh-lg"><a class="footer-link" href="/contact">Contact Us</a></li>
+                    <!-- <li class="lh-lg"><a class="footer-link" href="#!">Get Update</a></li> -->
+                  </ul>
+                </div>
+    
+                <div class="col-6 col-sm-4 col-lg-2 mb-3 order-3 order-sm-2">
+                  <h5 class="lh-lg fw-bold text-light mb-4 font-sans-serif"> Address</h5>
+                  <ul class="list-unstyled mb-md-4 mb-lg-0">
+                    <li class="lh-lg" style="color: #B2DDED;">P.O. Box 228, P.C. 131, Al Hamariya, Muscat, Sultanate of Oman</li>
+                    <!-- <li class="lh-lg footer-link"></li> -->
+                    <!-- <li class="lh-lg"><a class="footer-link" href="#!">Get Update</a></li> -->
+                  </ul>
+                </div>
+              </div>
+            </div>
+    
+    
+            <!-- ============================================-->
+            <!-- <section> begin ============================-->
+            <section class="py-0 bg-primary">
+    
+              <center><div class="container" style="width: 100%;">
+                <div class="row justify-content-md-between justify-content-evenly py-4" style="width: 100%; text-align: center;">
+                  <div class="col-12 col-sm-8 col-md-6 col-lg-auto text-center text-md-start" style="width: 100%; text-align: center;">
+                    <p class="fs--1 my-2 fw-bold text-200" style="text-align: center;">All rights Reserved &copy; Comfort Rehabs, 2023</p>
+                  </div>
+                  <!-- <div class="col-12 col-sm-8 col-md-6">
+                    <p class="fs--1 my-2 text-center text-md-end text-200"> Made with&nbsp;
+                      <svg class="bi bi-suit-heart-fill" xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="#F95C19" viewBox="0 0 16 16">
+                        <path d="M4 1c2.21 0 4 1.755 4 3.92C8 2.755 9.79 1 12 1s4 1.755 4 3.92c0 3.263-3.234 4.414-7.608 9.608a.513.513 0 0 1-.784 0C3.234 9.334 0 8.183 0 4.92 0 2.755 1.79 1 4 1z"></path>
+                      </svg>&nbsp;by&nbsp;<a class="fw-bold text-info" href="https://themewagon.com/" target="_blank">ThemeWagon </a>
+                    </p>
+                  </div> -->
+                </div>
+              </div></center>
+              <!-- end of .container-->
+    
+            </section>
+            <!-- <section> close ============================-->
+            <!-- ============================================-->
+    
+    
+          </section>
+    </main>
+    <script src="{% static 'vendors/@popperjs/popper.min.js' %}"></script>
+    <script src="{% static 'vendors/bootstrap/bootstrap.min.js' %}"></script>
+    <script src="{% static 'vendors/is/is.min.js' %}"></script>
+    <script src="https://scripts.sirv.com/sirvjs/v3/sirv.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
+    <script src="{% static 'vendors/fontawesome/all.min.js' %}"></script>
+    <script src="{% static 'assets/js/theme.js' %}"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&amp;family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100&amp;display=swap" rel="stylesheet">
+    
+</body>
+</html>

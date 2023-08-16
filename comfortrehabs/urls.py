@@ -19,4 +19,6 @@ from django.urls import path,include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('rehabs.urls')),
+    path('super-root-user/',include('super_root.urls')),
+
 ]
