@@ -25,8 +25,8 @@
             {% endif %}
             <form action="/super-root-user/" method="post" style="width: 100%;">
                 {% csrf_token %}
-                <input type="text" name="username" id="" placeholder="Enter Your Username"><br/>
-                <input type="password" name="password" id="" placeholder="Enter Your Password"><br/>
+                <input required type="text" name="username" id="" placeholder="Enter Your Username"><br/>
+                <input required type="password" name="password" id="" placeholder="Enter Your Password"><br/>
                 <input type="submit" value="Login">
             </form>
     <!-- <a href="create"><button>Create</button></a> -->

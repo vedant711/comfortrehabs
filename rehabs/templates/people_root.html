@@ -96,6 +96,8 @@
           </nav>    
 
           <center><section class="py-8" id="add-form" style="display: none;">
+            <center><h1>People Who Love Us</h1></center> 
+
           <center><button class="btn btn-primary rounded-pill" id="list-btn" style="margin-bottom: 20px" onclick="listBtnClick()">List</button></center>
 
             <div class="container" style="text-align: center;">
@@ -109,7 +111,7 @@
                   <form class="row g-3" style="text-align: center;" method="post" action="/super-root-user/people_add" id="add-form-form" onsubmit="submitForm()" enctype="multipart/form-data">
                     <div class="col-md-6">
                       <label class="visually-hidden" for="inputName">Name</label>
-                      <input class="form-control form-livedoc-control" id="inputName" type="text" placeholder="Name" name="name"/>
+                      <input required class="form-control form-livedoc-control" id="inputName" type="text" placeholder="Name" name="name"/>
                     </div>
                     <!-- <div class="col-md-6">
                       <label class="visually-hidden" for="inputPhone">Description</label>
@@ -122,7 +124,7 @@
                     </div> -->
                     <div class="col-md-6">
                       <label class="visually-hidden" for="inputName">Designation</label>
-                      <input class="form-control form-livedoc-control" id="inputName" type="text" placeholder="Designation" name="designation"/>
+                      <input required class="form-control form-livedoc-control" id="inputName" type="text" placeholder="Designation" name="designation"/>
                     </div>
                     <div class="col-md-12">
                       <label class="form-label visually-hidden" for="validationTextarea">Description</label>
@@ -131,7 +133,7 @@
 
                     <div class="col-md-12">
                       <label class="form-label visually-hidden" for="validationTextarea">Image</label>
-                      <input class="form-control form-livedoc-control" id="Image" placeholder="Image" required="required" name="image" type="file">
+                      <input required class="form-control form-livedoc-control" id="Image" placeholder="Image" required="required" name="image" type="file">
                     </div>
                     <div class="col-md-12">
                       <label class="visually-hidden" for="inputLinkedin">Linkedin</label>
@@ -149,11 +151,16 @@
           </section></center>
 
           <section class="py-8" id="data" style="width:80%;margin-left: 10%;">
+            <center><h1>People Who Love Us</h1></center> 
 
 
-          <center><button class="btn btn-primary rounded-pill" id="add-btn" style="margin-bottom: 20px" onclick=addBtnClick()>+ Add</button></center>
+          <center>
+            
 
-          <center><table id="dataTable" class="display nowrap" style="width:100%;">
+            <button class="btn btn-primary rounded-pill" id="add-btn" style="margin-bottom: 20px" onclick=addBtnClick()>+ Add</button></center>
+
+          <center>
+            <table id="dataTable" class="display nowrap" style="width:100%;">
             <thead>
             <tr>
                 <!-- <th></th> -->
