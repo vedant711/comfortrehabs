@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
+from dotenv.main import load_dotenv
 import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -24,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-f1v9%#mk)$87yafp87=z85c-otj*^mt1znb=#2ze#!i+$7of#^'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -75,7 +76,11 @@ WSGI_APPLICATION = 'comfortrehabs.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
-
+# from pathlib import Path  # python3 only
+# env_path = Path('.') / '.env'
+# load_dotenv(dotenv_path=env_path)
+# load_dotenv()
+print(os.environ)
 DATABASES = {
         'default': {
         # 'ENGINE': 'django.db.backends.sqlite3',
@@ -83,7 +88,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'comfortrehabs',
         'USER': 'root',
-        'PASSWORD': '12345678',
+        'PASSWORD': "12345678",
         'HOST':'localhost',
         'PORT':'3306',
     }

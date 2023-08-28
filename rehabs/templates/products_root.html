@@ -92,9 +92,12 @@
                 <!-- <a class="btn btn-sm btn-outline-primary rounded-pill order-1 order-lg-0 ms-lg-4" href="#!">Sign In</a> -->
               </div>
             </div>
-          </nav>    
+          </nav>   
+            
 
           <center><section class="py-8" id="add-form" style="display: none;">
+            <center><h1>Products</h1></center> 
+
           <center><button class="btn btn-primary rounded-pill" id="list-btn" style="margin-bottom: 20px" onclick="listBtnClick()">List</button></center>
 
             <div class="container" style="text-align: center;">
@@ -108,7 +111,7 @@
                   <form class="row g-3" style="text-align: center;" method="post" action="/super-root-user/products_add" id="add-form-form" onsubmit="submitForm()" enctype="multipart/form-data">
                     <div class="col-md-6">
                       <label class="visually-hidden" for="inputName">Product Name</label>
-                      <input class="form-control form-livedoc-control" id="inputName" type="text" placeholder="Product Name" name="title"/>
+                      <input required class="form-control form-livedoc-control" id="inputName" type="text" placeholder="Product Name" name="title"/>
                     </div>
                     <!-- <div class="col-md-6">
                       <label class="visually-hidden" for="inputPhone">Description</label>
@@ -116,8 +119,8 @@
                     </div> -->
                     <div class="col-md-6">
                       <label class="form-label visually-hidden" for="inputCategory">Category</label>
-                      <select class="form-select" id="inputCategory" name="joint">
-                        <option selected="selected">Select Joint</option>
+                      <select class="form-select" id="inputCategory" name="joint" required>
+                        <option disabled value="">Select Joint</option>
                         {% for joint in joints %}
                         <option value="{{joint.id}}"> {{joint.joint}}</option>
                         {% endfor %}
@@ -135,7 +138,7 @@
 
                     <div class="col-md-12">
                       <label class="form-label visually-hidden" for="validationTextarea">Image</label>
-                      <input class="form-control form-livedoc-control" id="Image" placeholder="Image" required="required" name="image" type="file">
+                      <input required class="form-control form-livedoc-control" id="Image" placeholder="Image" required="required" name="image" type="file">
                     </div>
                     <div class="col-12">
                       <div class="d-grid">
@@ -150,6 +153,7 @@
 
           <section class="py-8" id="data" style="width:80%;margin-left: 10%;">
 
+            <center><h1>Products</h1></center> 
 
           <center><button class="btn btn-primary rounded-pill" id="add-btn" style="margin-bottom: 20px" onclick=addBtnClick()>+ Add</button></center>
 

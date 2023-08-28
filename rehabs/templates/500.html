@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>500 | Internal Server Error</title>
+    <link rel="stylesheet" href="{% static 'assets/css/error.css' %}" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'assets/img/favicons/favicon.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'assets/img/favicons/favicon.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'assets/img/favicons/favicon.png' %}">
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'assets/img/favicons/favicon.png' %}">
+    <link rel="manifest" href="{% static 'assets/img/favicons/manifest.json' %}">
+    <meta name="msapplication-TileImage" content="{% static 'assets/img/favicons/favicon.png' %}">
+
+
+</head>
+<body>
+    <!-- <h1>404</h1> -->
+    <div class="wrapper">
+        <div class="container">
+          <div class="grid-row">
+            <div class="colmun colmun-left">
+              <img src="{% static 'assets/img/gallery/image-left-500.png' %}" alt="image-left">
+              <h1 class="px-spc-b-20">Internal Server Error</h1>
+              <span class="px-spc-b-20">There was some error while processing your request.</span>
+              <a href="/"><button class="go-home"><i class="fa fa-home"></i> Go Home</button></a>
+            </div>
+            <div class="colmun colmun-right">
+              <img src="{% static 'assets/img/gallery/right-shape.png' %}" alt="right-shape">
+            </div>
+          </div>
+        </div>
+      </div>
+</body>
+</html>

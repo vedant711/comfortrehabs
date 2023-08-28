@@ -29,3 +29,6 @@ urlpatterns = [
 
 
 ]
+
+handler404 = 'rehabs.views.error404'
+handler500 = 'rehabs.views.error500'

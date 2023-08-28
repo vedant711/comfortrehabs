@@ -100,6 +100,10 @@
           </nav>    
 
           <center><section class="py-8" id="add-form">
+            <center><h1>People Who Love Us</h1></center> 
+          <center><a href="/super-root-user/people"><button class="btn btn-primary rounded-pill" id="list-btn" style="margin-bottom: 20px">List</button></a></center>
+
+
           <!-- <center><button class="btn btn-primary rounded-pill" id="list-btn" style="margin-bottom: 20px" onclick="listBtnClick()">List</button></center> -->
 
             <div class="container" style="text-align: center;">
@@ -114,7 +118,7 @@
                     <form class="row g-3" style="text-align: center;" method="post" action="/super-root-user/edit-people/{{people.id}}" id="add-form-form" onsubmit="submitForm()" enctype="multipart/form-data">
                         <div class="col-md-6">
                           <label class="visually-hidden" for="inputName">Name</label>
-                          <input class="form-control form-livedoc-control" id="inputName" type="text" placeholder="Name" name="name" value="{{people.name}}"/>
+                          <input required class="form-control form-livedoc-control" id="inputName" type="text" placeholder="Name" name="name" value="{{people.name}}"/>
                         </div>
                         <!-- <div class="col-md-6">
                           <label class="visually-hidden" for="inputPhone">Description</label>
@@ -127,7 +131,7 @@
                         </div> -->
                         <div class="col-md-6">
                           <label class="visually-hidden" for="inputName">Designation</label>
-                          <input class="form-control form-livedoc-control" id="inputName" type="text" placeholder="Designation" name="designation" value="{{people.designation}}"/>
+                          <input required class="form-control form-livedoc-control" id="inputName" type="text" placeholder="Designation" name="designation" value="{{people.designation}}"/>
                         </div>
                         <div class="col-md-12">
                           <label class="form-label visually-hidden" for="validationTextarea">Description</label>
@@ -136,7 +140,7 @@
     
                         <div class="col-md-12">
                           <label class="form-label visually-hidden" for="validationTextarea">Image</label>
-                          <input class="form-control form-livedoc-control" id="Image" placeholder="Image" required="required" name="image" type="file">
+                          <input required class="form-control form-livedoc-control" id="Image" placeholder="Image" required="required" name="image" type="file">
                         </div>
                         <div class="col-md-12">
                           <label class="visually-hidden" for="inputLinkedin">Linkedin</label>
